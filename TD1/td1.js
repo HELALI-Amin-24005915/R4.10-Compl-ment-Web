@@ -13,14 +13,28 @@ function getRandomArbitrary() {
 
 function affichage(){
     var O_el = document.getElementById("affichage-temperature");
-    O_el.textContent = A_array[I_I];
-    I_I++;
+    var I_valeur = A_array[I_I]; 
+    
+    O_el.textContent = I_valeur + " °C";
 
+    if (I_valeur <= 0) {
+        O_el.className = "bordure_blue";
+    } else if (I_valeur <= 20) {
+        O_el.className = "bordure_green";
+    } else if (I_valeur <= 30) {
+        O_el.className = "bordure_orange";
+    } else {
+        O_el.className = "bordure_red";
+    }
+
+    I_I++;
     if(I_I >= A_array.length){
         I_I = 0;
     }
 }
-const I_timer = setInterval(affichage, 2000);
+
+
+const I_timer = setInterval(affichage, 200);
 
 getRandomArbitrary();
 affichage();
