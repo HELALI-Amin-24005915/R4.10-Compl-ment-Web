@@ -17,7 +17,7 @@ function affichage(){
     var I_valeur = A_array[I_I]; 
     
     O_el.textContent = I_valeur + " °C";
-    
+
     if (I_valeur <= 0) {
         O_el.className = "bordure_blue";
     } else if (I_valeur <= 20) {
@@ -41,9 +41,27 @@ function affichage(){
 
 }
 
-
 const I_timer = setInterval(affichage, 200);
 
-getRandomArbitrary();
+const F_afficherHistorique = function() {
+    const O_zoneAffichage = document.getElementById("O_monTableau");
+
+    if (O_zoneAffichage === null) {
+        return; 
+    }
+
+    for (let I_i = 0; I_i < A_array.length; I_i++) {
+        const O_ligne = document.createElement("tr"); 
+        const O_cellule = document.createElement("td"); 
+
+        O_cellule.textContent = A_array[I_i] + " °C"; 
+
+        O_ligne.appendChild(O_cellule); 
+        O_zoneAffichage.appendChild(O_ligne);
+    }
+};
+
+getRandomArbitrary(); 
+F_afficherHistorique();
 affichage();
 

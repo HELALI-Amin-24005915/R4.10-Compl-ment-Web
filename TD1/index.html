@@ -11,13 +11,22 @@
     <h1>TD1</h1>
 
 
-    <section id="affichage">
-        <h2>Valeur de température :</h2>
+    <article id="affichage">
+        <h2 role="data">Valeur de température :</h2>
         <h3>Message :</h3>
-        <p id="affichage-message"></p>
-        <p id="affichage-temperature"></p>
-    </section>
+        <p role="alert" aria-live="polite" id="affichage-message"></p>
+        <data role="data" id="affichage-temperature"></data>
+    </article>
+    <br>
 
+    <table>
+        <tbody id="O_monTableau"></tbody>
+        <thead>
+            <tr>
+                <th>Valeur</th>
+            </tr>
+        </thead>
+    </table>
 
     <script src="td1.js"></script>
 </body>
