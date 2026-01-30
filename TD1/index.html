@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="onglet.css" />
+
     <title>TD1</title>  
 
 </head>
 <body>
     <h1>TD1</h1>
 
+    <div class="tabs">
+        <h3 id="tablist-1">Valeur</h3>
+        <div role="tablist" aria-labelledby="tablist-1" class="manual">
+            <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">
+                <span class="focus">Valeur température</span>
+            </button>
+            <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1">
+                <span class="focus">Historique des valeurs</span>
+            </button>
+        </div>
 
-    <article id="affichage">
-        <h2 role="data">Valeur de température :</h2>
-        <h3>Message :</h3>
-        <p role="alert" aria-live="polite" id="affichage-message"></p>
-        <data role="data" id="affichage-temperature"></data>
-    </article>
-    <br>
+        <div id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+            <article id="affichage">
+                <h2 role="data">Température :</h2>
+                <h3>Message :</h3>
+                <p role="alert" aria-live="polite" id="affichage-message"></p>
+                <data role="data" id="affichage-temperature"></data>
+            </article>
+        </div>
 
-    <table>
-        <tbody id="O_monTableau"></tbody>
-        <thead>
-            <tr>
-                <th>Valeur</th>
-            </tr>
-        </thead>
-    </table>
+        <div id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" class="is-hidden">
+            <table>
+                <tbody id="O_monTableau"></tbody>
+                <thead>
+                    <tr>
+                        <th>Valeur :</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+        
 
     <script src="td1.js"></script>
+    <script src="onglet.js"></script>
+
 </body>
 </html>
+
