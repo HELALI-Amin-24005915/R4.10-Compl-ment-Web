@@ -13,10 +13,11 @@ function getRandomArbitrary() {
 
 function affichage(){
     var O_el = document.getElementById("affichage-temperature");
+    var O_message = document.getElementById("affichage-message");
     var I_valeur = A_array[I_I]; 
     
     O_el.textContent = I_valeur + " °C";
-
+    
     if (I_valeur <= 0) {
         O_el.className = "bordure_blue";
     } else if (I_valeur <= 20) {
@@ -31,6 +32,13 @@ function affichage(){
     if(I_I >= A_array.length){
         I_I = 0;
     }
+
+    if(I_valeur < 0){
+        O_message.textContent = "Brrrrrrr, un peu froid ce matin, mets ta cagoule !";            
+    }else if(I_valeur > 30){
+        O_message.textContent = "Caliente ! Vamos a la playa, ho hoho hoho !!";            
+    }
+
 }
 
 
