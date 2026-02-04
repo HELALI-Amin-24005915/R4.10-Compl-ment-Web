@@ -14,14 +14,25 @@ class C_CapteurThermique {
     }
 }
 
-/* class C_MajTpsReel{
-    Update();
+class C_MajTpsReel {
+    constructor(S_idElement) {
+        this.O_affichage = document.getElementById(S_idElement);
+    }
 
-
-
+    F_update(I_donnee) {
+        this.O_affichage.textContent = I_donnee + " °C";
+        
+        if (I_donnee <= 0) {
+            this.O_affichage.className = "bordure_blue";
+        } else if (I_donnee <= 20) {
+            this.O_affichage.className = "bordure_green";
+        } else {
+            this.O_affichage.className = "bordure_red";
+        }
+    }
 }
 
-class C_History{
+/* class C_History{
     Update();
 
 }
@@ -29,4 +40,4 @@ class C_History{
 class C_GererAlert{
     Update()
 
-} */
+} */ 
